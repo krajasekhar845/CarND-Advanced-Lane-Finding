@@ -42,7 +42,7 @@ After camera calibration, I used the distortion coefficients and camera matrix t
 
 #### 2. Binarization of image using colour and gradient thresholds
 
-Coming up with a good threshold for bianarizing the image is a very crucial task because the whole pipeline depends on it.
+Coming up with a good threshold for binarizing the image is a very crucial task because the whole pipeline depends on it.
 
 The code for this step is contained in the "**Image Binarization**" code cell of the IPython notebook `Advanced Lane Detection.ipynb`
 
@@ -53,7 +53,7 @@ For detecting yellow lines, I used a threshold on V channel in the HSV color spa
 
 #### 3. Perpective transform
 
-The code for my perspective transform includes a function called `perpective()`, which appears in "Perpective View" cell of the notebook.  The `perpective()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `perpective()`, which appears in "Perpective View" cell of the notebook.  The `perpective()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the following source and destination points:
 
 ```python
 src = np.float32([[w, h-15], [0, h-15], [546, 460], [732, 460]])
@@ -61,14 +61,14 @@ dst = np.float32([[w, h], [0, h], [0, 0], [w, 0]])
 ```
 
 
-I verified that my perspective transform was working as expected visualizing a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+I verified that my perspective transform was working as expected by visualizing a test image and its warped counterpart.
 
 ![alt text][image4]
 
 #### 4. Fitting lane lines with polynomial
 
 When fitting polynomials to lane lines, there are 2 cases:
-- New image - I use the `sliding_windows()` function to find the the peaks location of the histogram of the binary image, and then slide two windows towards the upper side of the image, deciding which pixels belong to the lane line.
+- New image - I use the `sliding_windows()` function to find the peak locations of the histogram of the binary image, and then slide two windows towards the upper side of the image, deciding which pixels belong to the lane line.
 - In case of video processing, we can limit our search in the neighbourhood of previously detected lane lines. I do this using the method `approx_by_previous_fits()`
 
 ![alt text][image5]
