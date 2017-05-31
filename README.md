@@ -1,5 +1,11 @@
 # Advanced Lane Finding
 
+### Final Output Video
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/VXZqWvI0sW0/0.jpg)](https://youtu.be/VXZqWvI0sW0)  
+
+---
+
 The goals / steps of this project are the following:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
@@ -89,7 +95,7 @@ Other images can be found in the `output_images` directory.
 
 ### Pipeline (video)
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/xW-F45lCpa4/0.jpg)](https://youtu.be/xW-F45lCpa4)
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/VXZqWvI0sW0/0.jpg)](https://youtu.be/VXZqWvI0sW0)
 
 ---
 
